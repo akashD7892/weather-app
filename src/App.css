@@ -1,0 +1,44 @@
+.weatherBg {
+    background: url("https://cardinalwxservice.com/wp-content/uploads/2019/09/Fall-1.jpg");
+    height: 50vh;
+    display: flex;
+    align-items: center;
+
+    justify-content: center;
+}
+
+.heading {
+    color: white;
+    font-weight: 700;
+}
+
+.infor {
+    margin: auto;
+    width: 450px;
+    height: 350px;
+
+}
+
+.form-control {
+    width: 300px;
+}
+
+.img1 {
+    height: 100px;
+    margin-top: 15px;
+}
+
+.weatherCity {
+    font-weight: 700;
+    font-size: xx-large;
+}
+
+.descri {
+    margin-top: 15px;
+    font-family: sans-serif;
+    font-size: x-large;
+}
+
+.col h6 {
+    border: 2px solid rgb(57, 66, 101);
+}
