@@ -10,6 +10,7 @@ export default function App() {
   const apiKey = "07898110f558707a4dac4438fb0bb02b";
   const [data, setData] = useState({});
   const [cityName, setCity] = useState("");
+  const [desc, setDesc] = useState("");
 
   const handleInput = (e) => {
     setCity(e.target.value);
@@ -23,11 +24,11 @@ export default function App() {
     const apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + apiKey
     axios.get(apiUrl).then((res) => {
       setData(res.data);
-      // const weatherArray = res.data.weather
-      // const temp = weatherArray[0].description
-      // console.log(temp);
-      // console.log(res.data.weather[0].description)
-      //console.log("response", res.data)
+      const weatherArray = res.data.weather
+      const temp = weatherArray[0].description
+      console.log(temp);
+      setDesc(temp)
+
     }).catch((err) => {
       console.log("err", err)
     })
@@ -56,10 +57,12 @@ export default function App() {
       </div>
 
       <div className='col-md-12 text-center mt-5'>
+
         <div className=' shadow rounded infor'>
           <img src='https://purepng.com/public/uploads/large/purepng.com-weather-iconsymbolsiconsapple-iosiosios-8-iconsios-8-721522596142qx4ep.png' className='img1' alt="Sorry" />
           <h5 className='weatherCity'>{data?.name}</h5>
-          <h6 className='descri'>{data.weather[0].description}</h6>          <div className="container" style={{ marginTop: 40 }}>
+          <h6 className='descri'>{desc}</h6>
+          <div className="container" style={{ marginTop: 40 }}>
             <div className="row align-items-start">
               <div className="col">
                 <h6>Temperature</h6>
@@ -72,6 +75,7 @@ export default function App() {
             </div>
 
           </div>
+
         </div>
 
 
